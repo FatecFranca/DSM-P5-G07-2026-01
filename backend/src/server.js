@@ -1,5 +1,5 @@
 import dotenv from "dotenv";
-dotenv.config({ path: path.resolve(process.cwd(), ".env") });
+dotenv.config({ path: new URL("../.env", import.meta.url).pathname });
 
 import express from "express";
 import { connectDB } from "./config/db.js";
