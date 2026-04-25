@@ -1,6 +1,3 @@
-import dotenv from "dotenv";
-dotenv.config();
-
 import e from "cors";
 import authService from "../services/auth.service.js";
 
