@@ -9,9 +9,8 @@ export default async function auth(req, res, next){
     const token = authHeader.split(` `)[1];
     try {
         const payload = jwt.verify(token, JWT_SECRET);
-        const userId = payload.sub;
         const user = await prisma.user.findUnique({
-            where: { id: userId },
+            where: { id: payload.userId },
             select: {
                 id: true,
                 role: true,
